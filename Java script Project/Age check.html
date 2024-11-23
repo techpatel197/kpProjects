@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Data Types</title>
+      <script>
+         function SubmitClick(){
+            var username = prompt("Enter Your Name");
+            var age = document.getElementById("lstAge").value;
+            var msg1 = "Hello !" + " " + username + " " + "you will be" + " " + (parseInt(age)+1) + " " + "next year.<br>";
+            var msg2 = `Hello ! ${username} you will be ${parseInt(age)+1} next year.`;
+            document.write(msg1);
+            document.write(msg2);
+         }
+      </script>
+   </head>
+   <body>
+      <dl>
+         <dt>Select Age</dt>
+         <dd>
+            <select id="lstAge">
+               <option value="15">15</option>
+               <option value="20">20</option>
+               <option value="25">25</option>
+               <option value="30">30</option>
+            </select>
+         </dd>
+       
+      </dl>
+      <button onclick="SubmitClick()">Submit</button>
+   </body>
+</html>

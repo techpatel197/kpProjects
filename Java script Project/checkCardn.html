@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>String</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            function VerifyCard(){
+                var cardnumber = document.getElementById("txtCard").value;
+                var cardImg = document.getElementById("cardImg");
+                if(cardnumber.startsWith("4444")){
+                    cardImg.src = "../public/images/master.png";
+                } else if(cardnumber.startsWith("5555")) {
+                    cardImg.src = "../public/images/visa.png";
+                } else {
+                    cardImg.src="";
+                    cardImg.alt = "N/A";
+                }
+            }
+            function VerifyEmail(){
+                var email = document.getElementById("txtEmail").value;
+               
+                if(email.endsWith("gmail.com")) {
+                    document.getElementById("msg").innerHTML = "Email Verified";
+                } else {
+                    document.getElementById("msg").innerHTML = "Invalid Email";
+                }
+            }
+        </script>
+    </head>
+    <body class="container-fluid">
+        <fieldset>
+            <legend>Verify Details</legend>
+            <div>
+                <h3>Card Number</h3>
+                <div class="input-group">
+                    <input type="text" id="txtCard" onkeyup="VerifyCard()" class="form-control">
+                    <img class="input-group-text" id="cardImg" class="img-fluid" width="100" height="50">
+                </div>
+                <h3>Your Gmail</h3>
+                <div>
+                    <input type="text" onkeyup="VerifyEmail()" id="txtEmail" class="form-control">
+                    <div id="msg">
+
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+     
+    </body>
+</html>

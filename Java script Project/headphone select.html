@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Dynamic</title>
+      <script>
+         var products = ["../","../public/images/desktop.png","../public/images/mobile.png"];
+         function bodyload(){
+            for(var path of products)
+            {
+               var pic = document.createElement("img");
+               pic.src = path;
+               pic.width = "100";
+               pic.height = "100";
+               document.getElementById("container").appendChild(pic);
+
+               var option = document.createElement("option");
+               option.text = path;
+               document.querySelector("select").appendChild(option);
+
+               var li = document.createElement("li");
+               li.innerHTML = path;
+               document.querySelector("ol").appendChild(li);
+            }
+         }
+      </script>
+   </head>
+   <body onload="bodyload()">
+       <div id="container">
+
+       </div>
+       <h2>Select Path</h2>
+       <select>
+
+       </select>
+       <h2>Image Path List</h2>
+       <ol>
+
+       </ol>
+   </body>
+</html>

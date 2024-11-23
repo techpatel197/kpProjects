@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Time</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <style>
+            #container {
+                display: flex;
+                justify-content: space-between;
+                font-size: 25px;
+                background-color: red;
+                color:white;
+                padding: 5px;
+            }
+        </style>
+        <script>
+            function Clock(){
+                var now = new Date();
+                document.getElementById("time").innerHTML = now.toLocaleTimeString();
+            }
+            function bodyload(){
+                setInterval(Clock, 1000);
+                var now = new Date();
+                var icon = document.getElementById("icon");
+                var msg = document.getElementById("msg");
+                var hrs = now.getHours();
+                if(hrs>=0 && hrs<=12) {
+                    msg.innerHTML = "Good Morning";
+                    icon.className= "bi bi-brightness-alt-high";
+                } else if (hrs>=13 && hrs<=17) {
+                    msg.innerHTML = "Good Afternoon";
+                    icon.className = "bi bi-brightness-high";
+                } else {
+                    msg.innerHTML = "Good Evening";
+                    icon.className = "bi bi-cloud-sun-fill";
+                }
+            }
+        </script>
+    </head>
+    <body onload="bodyload()">
+        <div id="container">
+            <span>Amazon Shopping</span>
+            <span>
+               <span id="icon"></span>  <span id="msg"></span>
+            </span>
+            <span id="time"></span>
+        </div>
+    </body>
+</html>

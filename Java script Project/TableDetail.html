@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON</title>
+        <script>
+            var products = [
+                {Name: "boAt Neckband", Price: 5600.45, Photo:"../public/images/neckband.png"},
+                {Name: "Laptop", Price: 67000.44, Photo: "../public/images/laptop.png"},
+                {Name: "Mobile", Price: 12000.44, Photo: "../public/images/mobile.png"},
+                {Name: "Desktop", Price: 34000.44, Photo:"../public/images/desktop.png"}
+            ];
+            function bodyload(){
+                for(var product of products)
+                {
+                    var tr = document.createElement("tr");
+                    var tdName = document.createElement("td");
+                    var tdPrice = document.createElement("td");
+                    var tdPhoto = document.createElement("td");
+
+                    tdName.innerHTML = product.Name;
+                    tdPrice.innerHTML = product.Price;
+
+                    var img = document.createElement("img");
+                    img.src = product.Photo;
+                    img.width = "100";
+                    img.height="100";
+
+                    tdPhoto.appendChild(img);
+
+                    tr.appendChild(tdName);
+                    tr.appendChild(tdPrice);
+                    tr.appendChild(tdPhoto);
+
+                    document.querySelector("tbody").appendChild(tr);
+                }
+            }
+        </script>
+    </head>
+    <body onload="bodyload()">
+        <table border="1" width="700">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Preview</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </body>
+</html>

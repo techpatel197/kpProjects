@@ -1,0 +1,34 @@
+<script>
+    let product = {
+        "Name": "",
+        "Price": 0,
+        "Stock": false,
+        "Qty": 0,
+        "Cities": [],
+        "Rating": {Rate:0, Count:0},
+        "Total": function(){
+            return this.Qty * this.Price;
+        },
+        "Print": function(){
+            document.write(`Name=${this.Name}<br>Price=${this.Price}<br>Stock=${this.Stock}<br>Quantity=${this.Qty}<br>Total=${this.Total()}<br>Shipped To=${this.Cities.toString()}<br>Rating=${this.Rating.Rate}<br>Rating From ${this.Rating.Count} People <br>`);
+        }
+    }
+    document.write(`<h2>TV Details</h2>`);
+    product.Name = "Samsung TV";
+    product.Price = 56000.55;
+    product.Qty = 2;
+    product.Stock = true;
+    product.Rating.Rate = 4.5;
+    product.Rating.Count = 300;
+    product.Cities = ["Delhi", "Hyd"];
+    product.Print();
+    document.write(`<h2>Shoe Details</h2>`);
+    product.Name = "Nike Casuals";
+    product.Price = 5000.44;
+    product.Qty = 3;
+    product.Stock = true;
+    product.Rating.Rate = 4.8;
+    product.Rating.Count = 100;
+    product.Cities = ["Mumbai", "Hyd", "Chennai"];
+    product.Print();
+</script>

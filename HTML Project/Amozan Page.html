@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Card</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <style>
+           iframe {
+               border: none;
+               height: 700px;
+           }
+        </style>
+    </head>
+    <body class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-1">
+            <div class="container-fluid">
+                <button class="navbar-toggler" data-bs-target="#menulist" data-bs-toggle="collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <span class="bi bi-cart4"></span> Amazon
+                </a>
+                
+                <div class="collapse navbar-collapse" id="menulist">
+                   <div class="d-flex justify-content-between">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" target="frameBody" href="cards.html"> Home </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" target="frameBody" href="forms.html"> About </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link"> Contact </a>
+                      </li>
+                      </ul>
+                      <div>
+                        <form class="input-group">
+                            <input type="text" class="form-control">
+                            <button class="btn btn-warning">Search</button>
+                        </form>
+                      </div>
+                   </div>
+                </div>
+            </div>
+        </nav>
+        <section class="mt-2">
+            <iframe name="frameBody" src="accordion.html" width="100%">
+
+
+            </iframe>
+        </section>
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </body>
+</html>

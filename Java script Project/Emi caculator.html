@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EMI Calculator</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <style>
+            .form-element {
+                width: 100px;
+            }
+        </style>
+        <script>
+            function AmountChange(){
+                document.getElementById("txtAmount").value =  document.getElementById("amountRange").value;
+            }
+            function CalculateClick(){
+                var p = parseInt(document.getElementById("txtAmount").value);
+                var r = parseInt(document.getElementById("txtInterest").value);
+                var n = parseInt(document.getElementById("txtYears").value);
+                var emi = "";
+
+            }
+            function UpdateAmount(){
+                document.getElementById("amountRange").value = document.getElementById("txtAmount").value;
+            }
+        </script>
+    </head>
+    <body class="container-fluid">
+        <div>
+            <h2>EMI Calculator</h2>
+            <div class="row">
+                <div class="col">
+                    <div class="input-group">
+                        Amount you need <span class="input-group-text">&#8377;</span> <input type="text" onchange="UpdateAmount()" id="txtAmount" class="form-element">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        for <input type="text" id="txtYears" class="form-element"> years
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        Interest rate <input type="text" id="txtInterest" class="form-element"> %
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    50,000 <input type="range" onchange="AmountChange()" id="amountRange" min="50000" max="4000000" value="50000"> 4000000
+
+                </div>
+                <div class="col">
+                   1 <input type="range" min="1" id="yearRange" value="1" max="5"> 5
+                </div>
+                <div class="col">
+                  10.5% <input type="range" min="10" id="interestRange" max="21" value="10" step="0.5"> 21%
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <button  onclick="CalculateClick()" class="btn btn-primary">Calculate</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

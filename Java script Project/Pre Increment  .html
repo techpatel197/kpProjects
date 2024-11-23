@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Operators</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            function GetProduct(url) {
+                fetch(url)
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(data){
+                    document.getElementById("prodTitle").innerHTML = data.title;
+                    document.getElementById("prodImg").src = data.image;
+                    document.getElementById("prodDesc").innerHTML = data.description;
+                })
+            }
+            function bodyload(){
+                GetProduct("http://fakestoreapi.com/products/1&quot;");
+            }
+            var count = 1;
+            function NextClick(){
+                count++;
+                GetProduct(`http://fakestoreapi.com/products/${count}`);
+            }
+            function PreviousClick(){
+                count--;
+                GetProduct(`http://fakestoreapi.com/products/${count}`);
+            }
+        </script>
+        <style>
+            #prodDesc {
+                position: fixed;
+                right: 20px;
+                top:550px;
+                border:2px solid darkcyan;
+                padding: 10px;
+                width: 70px;
+                height: 100px;
+                background-color: darkcyan;
+                color:white;
+                font-size: 20px;
+                overflow: auto;
+            }
+        </style>
+    </head>
+    <body onload="bodyload()">
+        <div class="container-fluid" style="margin-top: 100px;">
+            <div class="d-flex justify-content-center align-items-center" style="height: 400px;">
+                <div>
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <h2 id="prodTitle"></h2>
+                        </div>
+                        <div class="card-body text-center">
+                            <img width="300" id="prodImg" height="300">
+                            <p id="prodDesc" class="w-50 text-center"></p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <button class="btn btn-danger" onclick="PreviousClick()">
+                                <span class="bi bi-chevron-bar-left"></span>
+                            </button>
+                            <button class="btn btn-danger" onclick="NextClick()">
+                                <span class="bi bi-chevron-bar-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <style>
+            dd,dt {
+                margin-top: 10px;
+            }
+        </style>
+        <script>
+            function GenerateCode(){
+                var a = Math.random() * 10;
+                var b = Math.random() * 10;
+                var c = Math.random() * 10;
+                var d = Math.random() * 10;
+                var e = Math.random() * 10;
+                var f = Math.random() * 10;
+                return `${Math.round(a)} ${Math.round(b)} ${Math.round(c)} ${Math.round(d)} ${Math.round(e)} ${Math.round(f)}`;
+            }
+            function bodyload(){
+                document.getElementById("code").innerHTML = GenerateCode();
+            }
+            function NewCode(){
+                bodyload();
+            }
+        </script>
+    </head>
+    <body onload="bodyload()">
+        <fieldset>
+            <legend>User Login</legend>
+            <dl>
+                <dt>User Name</dt>
+                <dd><input type="text"></dd>
+                <dt>Password</dt>
+                <dd><input type="password"></dd>
+                <dt>Verify Code <button onclick="NewCode()" class="btn"><span class="bi bi-arrow-clockwise"></span></button> </dt>
+                <dd><span id="code"></span></dd>
+            </dl>
+            <button>Login</button>
+        </fieldset>
+    </body>
+</html>

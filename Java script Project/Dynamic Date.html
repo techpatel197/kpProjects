@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Date Demo</title>
+        <script>
+            function DateChanged(){
+                var weekdays = ["Sunday","Mon","Tue","Wed","Thu","Fri","Sat"];
+
+                var departure = new Date(document.getElementById("txtDate").value);
+                document.querySelector("h2").innerHTML = `Departure Date : ${weekdays[departure.getDay()]}, ${departure.toLocaleDateString()}`;
+            }
+        </script>
+    </head>
+    <body>
+        Departure Date :
+        <input type="date" onchange="DateChanged()" id="txtDate">
+        <br>
+        <h2></h2>
+    </body>
+</html>

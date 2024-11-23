@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function age()
+        {
+            if(document.getElementById("t1").value>=18)
+            {
+                window.alert(" Not eligble for vote");
+
+            }
+            else
+            {
+                window.alert("you are eligble")
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Enter the age:<input type="text" id="t1"><br></h1><br>
+    
+    <button class="btn btn-danger" type="button" onclick="age()">Verify</button>
+</body>
+</html>
