@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  web:
+    image: nginx:latest
+    container_name: static_website
+    ports:
+      - "80:80"
+    volumes:
+      # Mount your project directory to NGINX's default web root
+      - ./project:/usr/share/nginx/html
+    restart: always
